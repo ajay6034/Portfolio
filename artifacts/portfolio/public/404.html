@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ajay Kumar - AI/ML Engineer</title>
+    <script>
+      // Single Page Application routing fix for GitHub Pages.
+      // When GitHub Pages returns a 404 for an unknown path (e.g. /projects),
+      // this script saves the path in sessionStorage and redirects to index.html,
+      // which then restores the correct URL via history.replaceState.
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -58,7 +58,7 @@ export function Contact() {
                   <div>
                     <div className="text-sm font-bold text-muted-foreground mb-1">Location</div>
                     <span className="text-lg font-medium">
-                      New Haven, CT, USA
+                      Dallas, Texas, USA
                     </span>
                   </div>
                 </div>
