@@ -77,7 +77,7 @@ export function Navigation() {
           href="/"
           className="text-xl font-bold font-display tracking-tighter hover:opacity-80 transition-opacity"
         >
-          ALEX.<span className="text-primary">DEV</span>
+          AJAY.<span className="text-primary">AI</span>
         </Link>
 
         {/* Desktop Nav */}

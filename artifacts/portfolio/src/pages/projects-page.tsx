@@ -7,74 +7,72 @@ import { Link } from "wouter";
 
 const projects = [
   {
-    title: "FinDash",
+    title: "ARIES — Automated Candidate Interview & Evaluation System",
     description:
-      "A comprehensive financial dashboard for SaaS businesses. Integrates with Stripe and Plaid APIs to provide real-time revenue analytics, churn prediction, and automated reporting.",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "AI-powered interview automation platform using multi-agent LLM orchestration to conduct technical interviews and generate real-time candidate evaluations. Architected Interviewer, Candidate, and Evaluation agents using AutoGen AgentChat with coordinated prompt flows, termination rules, and sequential orchestration.",
+    tech: ["Python", "AutoGen", "OpenAI GPT-4o", "FastAPI", "Flask", "WebSocket", "Docker", "Gunicorn", "Uvicorn"],
+    github: "https://github.com/ajay6034",
+    live: "",
+    image:
+      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800&h=500",
+    category: "GenAI / Multi-Agent",
+  },
+  {
+    title: "Healthcare GenAI Platform — Cardinal Health",
+    description:
+      "End-to-end ML and GenAI platform for healthcare data, supporting enterprise AI initiatives across national healthcare operations. Built agentic LLM workflows for autonomous multi-step reasoning (ingestion, retrieval, summarization, validation agents). Delivered $1M+ annualized platform investment.",
+    tech: ["Python", "LangChain", "RAG", "Pinecone", "FastAPI", "AWS", "Docker", "Airflow", "Prometheus", "Grafana"],
+    github: "https://github.com/ajay6034",
+    live: "",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800&h=500",
+    category: "MLOps / GenAI",
+  },
+  {
+    title: "Clinical QA Chatbot with RAG",
+    description:
+      "Retrieval-Augmented Generation chatbot for clinical question answering using Pinecone vector database and transformer embeddings. Increased response accuracy by 30% over baseline. Integrated advanced NLP pipelines using BERT, SBERT, and SpaCy for entity extraction and semantic similarity.",
+    tech: ["Python", "BERT", "SBERT", "Pinecone", "LangChain", "FastAPI", "AWS Lambda", "Streamlit"],
+    github: "https://github.com/ajay6034",
+    live: "",
+    image:
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800&h=500",
+    category: "NLP / RAG",
+  },
+  {
+    title: "Smart Grid Anomaly Detection — APCPDCL",
+    description:
+      "Anomaly detection pipelines for Andhra Pradesh's electricity distribution network, processing millions of smart-meter and SCADA records daily. Identified meter tampering, abnormal consumption patterns, and transformer overload risks using K-Means and DBSCAN clustering algorithms.",
+    tech: ["Python", "PySpark", "K-Means", "DBSCAN", "AWS SageMaker", "FastAPI", "Airflow", "Docker", "Jenkins"],
+    github: "https://github.com/ajay6034",
+    live: "",
+    image:
+      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800&h=500",
+    category: "ML / Data Engineering",
+  },
+  {
+    title: "Demand Forecasting & Grid Planning",
+    description:
+      "Time-series demand forecasting system for power grid capacity planning using LSTM, ARIMA, and Prophet models. Enabled planners to reduce peak-load surprises and improve long-term grid reliability. Deployed on AWS SageMaker with automated model versioning and real-time endpoint inference.",
+    tech: ["Python", "LSTM", "ARIMA", "Prophet", "TensorFlow", "XGBoost", "AWS SageMaker", "PySpark", "SQL"],
+    github: "https://github.com/ajay6034",
+    live: "",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800&h=500",
-    category: "Full Stack",
+    category: "ML / Time Series",
   },
   {
-    title: "TaskFlow",
+    title: "GenAI Dashboards & Streamlit Tools",
     description:
-      "A collaborative project management tool designed for remote engineering teams. Features real-time updates, kanban boards, markdown support, and GitHub integration.",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-    github: "https://github.com",
-    live: "https://example.com",
+      "Interactive GenAI dashboards and internal tools built with Streamlit for real-time model inference, prompt experimentation, and RAG evaluation workflows. Enabled cross-functional teams to conduct prompt engineering experiments and evaluate LLM outputs without engineering overhead.",
+    tech: ["Python", "Streamlit", "FastAPI", "OpenAI", "LangChain", "Pandas", "Matplotlib", "AWS"],
+    github: "https://github.com/ajay6034",
+    live: "",
     image:
       "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=800&h=500",
-    category: "Full Stack",
-  },
-  {
-    title: "DevChronicles",
-    description:
-      "A headless CMS-powered blogging platform optimized for technical writers. Includes syntax highlighting, SEO management, and a high-performance static generation architecture.",
-    tech: ["Next.js", "Contentful", "Tailwind CSS", "GraphQL", "Vercel"],
-    github: "https://github.com",
-    live: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800&h=500",
-    category: "Frontend",
-  },
-  {
-    title: "ShopSense",
-    description:
-      "An AI-powered e-commerce recommendation engine that analyzes user behavior to suggest relevant products, improving average order value by 28% in A/B testing.",
-    tech: ["Python", "FastAPI", "React", "TensorFlow", "Redis", "AWS"],
-    github: "https://github.com",
-    live: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800&h=500",
-    category: "AI / ML",
-  },
-  {
-    title: "PulseAPI",
-    description:
-      "A developer-friendly API monitoring and analytics platform. Tracks uptime, latency, error rates, and sends intelligent alerting via Slack and PagerDuty.",
-    tech: ["Node.js", "TypeScript", "InfluxDB", "React", "Docker", "Kubernetes"],
-    github: "https://github.com",
-    live: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800&h=500",
-    category: "Backend",
-  },
-  {
-    title: "OpenSketch",
-    description:
-      "A real-time collaborative whiteboard app for distributed design teams. Supports freehand drawing, shapes, sticky notes, and live cursor presence for up to 50 simultaneous users.",
-    tech: ["React", "Canvas API", "WebSockets", "Node.js", "Redis"],
-    github: "https://github.com",
-    live: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800&h=500",
-    category: "Full Stack",
+    category: "GenAI / Tools",
   },
 ];
-
-const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
 
 export default function ProjectsPage() {
   return (
@@ -82,7 +80,6 @@ export default function ProjectsPage() {
       <Navigation />
       <main className="pt-32 pb-24">
         <div className="container mx-auto px-6 md:px-12">
-          {/* Page Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,12 +107,10 @@ export default function ProjectsPage() {
               Projects & Work
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
-              A collection of things I've built — from full-stack web applications to
-              AI-powered tools. Each project represents a problem worth solving.
+              A selection of ML, GenAI, and data engineering projects spanning healthcare, energy, and enterprise AI — from production platforms to academic research.
             </p>
           </motion.div>
 
-          {/* Projects Grid */}
           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
               <motion.div
@@ -138,7 +133,7 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold font-display mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold font-display mb-3 group-hover:text-primary transition-colors leading-snug">
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
@@ -164,21 +159,26 @@ export default function ProjectsPage() {
                       asChild
                     >
                       <a href={project.github} target="_blank" rel="noreferrer">
-                        <Github className="h-4 w-4" /> Code
+                        <Github className="h-4 w-4" /> GitHub
                       </a>
                     </Button>
-                    <Button size="sm" className="flex-1 gap-2 rounded-full" asChild>
-                      <a href={project.live} target="_blank" rel="noreferrer">
-                        <ExternalLink className="h-4 w-4" /> Live App
-                      </a>
-                    </Button>
+                    {project.live ? (
+                      <Button size="sm" className="flex-1 gap-2 rounded-full" asChild>
+                        <a href={project.live} target="_blank" rel="noreferrer">
+                          <ExternalLink className="h-4 w-4" /> Live App
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button size="sm" variant="secondary" className="flex-1 gap-2 rounded-full" disabled>
+                        Enterprise / Internal
+                      </Button>
+                    )}
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Call to action */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -187,11 +187,10 @@ export default function ProjectsPage() {
             className="mt-20 text-center py-16 rounded-3xl border border-border bg-card"
           >
             <h3 className="text-2xl md:text-3xl font-bold font-display mb-4">
-              Have a project in mind?
+              Have an AI/ML challenge?
             </h3>
             <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-              I'm always open to new challenges and interesting collaborations. Let's build
-              something great together.
+              I'm open to new opportunities and interesting problems in AI, ML, and GenAI. Let's talk.
             </p>
             <Link href="/#contact">
               <Button size="lg" className="rounded-full h-12 px-8 font-medium">

@@ -10,11 +10,11 @@ export function Footer() {
           href="/"
           className="text-lg font-bold font-display tracking-tighter hover:opacity-80 transition-opacity"
         >
-          ALEX.<span className="text-primary">DEV</span>
+          AJAY.<span className="text-primary">AI</span>
         </Link>
 
         <p className="text-muted-foreground text-sm text-center md:text-left">
-          &copy; {currentYear} Alex Chen. All rights reserved. Built with React & Tailwind CSS.
+          &copy; {currentYear} Ajay Kumar. All rights reserved.
         </p>
 
         <div className="flex items-center gap-6">

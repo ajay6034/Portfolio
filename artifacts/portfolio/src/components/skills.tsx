@@ -3,20 +3,20 @@ import { Badge } from "@/components/ui/badge";
 
 const skillCategories = [
   {
-    title: "Frontend",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion", "Vue.js", "Redux", "Zustand"]
+    title: "Languages & Frameworks",
+    skills: ["Python", "SQL", "FastAPI", "Flask", "Streamlit", "Pandas", "NumPy", "Matplotlib"]
   },
   {
-    title: "Backend",
-    skills: ["Node.js", "Express", "NestJS", "Python", "Django", "Go", "GraphQL", "REST APIs"]
+    title: "ML, AI & NLP",
+    skills: ["scikit-learn", "XGBoost", "TensorFlow", "Keras", "BERT", "SBERT", "SpaCy", "NLTK", "LangChain", "AutoGen", "OpenAI GPT-4o", "Transformers", "Fine-Tuning", "Prompt Engineering", "RAG"]
   },
   {
-    title: "Database",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL", "Prisma", "Drizzle ORM", "Mongoose"]
+    title: "MLOps & Cloud",
+    skills: ["AWS SageMaker", "AWS S3 / EC2 / Lambda", "AWS Glue", "Docker", "Apache Airflow", "MLflow", "CI/CD", "Jenkins", "Prometheus", "Grafana", "Azure", "Kubernetes"]
   },
   {
-    title: "DevOps & Tools",
-    skills: ["Git", "Docker", "AWS", "Vercel", "GitHub Actions", "Jest", "Cypress", "Linux"]
+    title: "Data Engineering & Databases",
+    skills: ["PySpark", "Apache Spark", "Kafka", "ARIMA", "Prophet", "LSTM", "Vector Databases", "Pinecone", "PostgreSQL", "Feature Engineering", "ETL Pipelines"]
   }
 ];
 
@@ -25,7 +25,7 @@ export function Skills() {
     <section id="skills" className="py-24">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -33,7 +33,7 @@ export function Skills() {
           >
             Capabilities
           </motion.h2>
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -57,9 +57,9 @@ export function Skills() {
               <h4 className="text-xl font-bold font-display border-b border-border pb-2">{category.title}</h4>
               <div className="flex flex-wrap gap-2 pt-2">
                 {category.skills.map((skill, j) => (
-                  <Badge 
-                    key={j} 
-                    variant="secondary" 
+                  <Badge
+                    key={j}
+                    variant="secondary"
                     className="px-3 py-1.5 text-sm font-medium bg-muted/50 hover:bg-primary/10 hover:text-primary transition-colors"
                   >
                     {skill}

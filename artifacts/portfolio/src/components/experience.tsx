@@ -2,36 +2,34 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    company: "Nexus Technologies",
-    role: "Senior Full Stack Engineer",
-    period: "2021 - Present",
-    description: "Lead architect for the core SaaS platform. Spearheaded the migration from a monolithic Express application to a microservices architecture using Node.js and Next.js, resulting in a 40% improvement in load times and higher developer velocity. Mentored a team of 4 junior developers.",
+    company: "Cardinal Health",
+    role: "AI / ML Engineer",
+    period: "Jul 2024 – Present",
+    description: "Developed and delivered an end-to-end ML and GenAI platform for healthcare data. Led delivery of a $1M+ annualized platform investment supporting enterprise AI initiatives across national healthcare operations.",
     achievements: [
-      "Reduced API response time by 60% by implementing Redis caching.",
-      "Introduced strict TypeScript typing across the entire codebase.",
-      "Designed and implemented a real-time notification system using WebSockets."
+      "Reduced manual effort by 40% per analyst per dataset through automated ML pipelines.",
+      "Improved prediction accuracy to 92% using ensemble models — a 20% gain and +0.20 F1-score over baseline.",
+      "Designed RAG with Pinecone and transformer embeddings for a clinical QA chatbot, increasing response accuracy by 30%.",
+      "Reduced average inference latency from 2.4s to 1.3s via Prometheus and Grafana observability.",
+      "Optimized AWS infrastructure (S3, EC2, Lambda, Glue), achieving 18% cost reduction.",
+      "Built agentic LLM workflows using LangChain for multi-step reasoning, tool calling, memory management, and agent coordination.",
+      "Developed scalable REST APIs (FastAPI) exposing inference services to enterprise applications and dashboards.",
+      "Productionized models using Docker, Airflow, and CI/CD for automated training, validation, and deployment."
     ]
   },
   {
-    company: "Elevate Digital",
-    role: "Frontend Developer",
-    period: "2018 - 2021",
-    description: "Key contributor to several high-profile client projects including e-commerce platforms and fintech dashboards. Championed the adoption of React and modern state management tools.",
+    company: "APCPDCL",
+    role: "Data Scientist / ML Engineer",
+    period: "Jul 2018 – Jun 2022",
+    description: "Built ML systems for the Andhra Pradesh electricity distribution company, processing millions of smart-meter and SCADA records daily to detect anomalies, forecast demand, and improve grid reliability.",
     achievements: [
-      "Built a component library used across 5 different client projects.",
-      "Implemented complex data visualizations using D3.js and Recharts.",
-      "Improved accessibility score from 75 to 98 across main product lines."
-    ]
-  },
-  {
-    company: "Launchpad Startup",
-    role: "Software Engineer",
-    period: "2016 - 2018",
-    description: "Full-stack role in a fast-paced early-stage startup environment. Built MVPs from scratch and iterated rapidly based on user feedback.",
-    achievements: [
-      "Developed the initial MVP that helped secure $2M in Seed funding.",
-      "Integrated Stripe for seamless payment processing.",
-      "Set up initial CI/CD pipelines using GitHub Actions."
+      "Developed anomaly detection pipelines using K-Means and DBSCAN to identify meter tampering and transformer overload risks.",
+      "Engineered scalable data pipelines using PySpark and SQL to process millions of smart-meter records daily.",
+      "Deployed models on AWS SageMaker with automated training jobs, model versioning, and real-time endpoint inference.",
+      "Automated end-to-end pipelines with Apache Airflow — enabling unattended daily and weekly model runs.",
+      "Built RESTful APIs with FastAPI to expose forecasts and anomaly scores to internal dashboards.",
+      "Containerized services using Docker and CI/CD pipelines with Jenkins for repeatable deployments.",
+      "Integrated NLP pipelines to summarize operational reports and outage logs, improving engineer triage efficiency."
     ]
   }
 ];
@@ -60,7 +58,6 @@ export function Experience() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
             >
-              {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 w-10 h-10 rounded-full bg-background border-4 border-primary shadow flex items-center justify-center -translate-x-1/2 group-hover:scale-110 transition-transform z-10" />
 
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] pl-4 md:pl-0">
@@ -74,15 +71,15 @@ export function Experience() {
                       {exp.period}
                     </div>
                   </div>
-                  
+
                   <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                     {exp.description}
                   </p>
-                  
+
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, j) => (
                       <li key={j} className="text-sm text-muted-foreground flex gap-2">
-                        <span className="text-primary mt-1">•</span>
+                        <span className="text-primary mt-1 shrink-0">•</span>
                         <span>{achievement}</span>
                       </li>
                     ))}

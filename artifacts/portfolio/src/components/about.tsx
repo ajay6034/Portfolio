@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code, Terminal, Globe, Database } from "lucide-react";
+import { Brain, Cloud, FlaskConical, BarChart3 } from "lucide-react";
 
 export function About() {
   return (
@@ -13,36 +13,38 @@ export function About() {
           className="max-w-3xl mb-16"
         >
           <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">About Me</h2>
-          <h3 className="text-3xl md:text-4xl font-bold font-display mb-6">Bridging the gap between design and engineering.</h3>
+          <h3 className="text-3xl md:text-4xl font-bold font-display mb-6">
+            Engineering AI that delivers real business impact.
+          </h3>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            For the past 6 years, I've been transforming complex problems into elegant, scalable solutions. I believe that the best software is built at the intersection of robust architecture and intuitive design.
+            With 6 years of experience in AI/ML engineering, I specialize in developing and deploying production-grade machine learning and generative AI systems for healthcare and financial services. My work spans the full ML lifecycle — from data pipelines and model development to MLOps, observability, and enterprise-scale deployment.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-            My approach is pragmatic: pick the right tools for the job, write clean, maintainable code, and always keep the end-user in mind. When I'm not coding, you'll find me contributing to open-source, reading about system architecture, or brewing the perfect cup of coffee.
+            I thrive at the intersection of research and production: translating state-of-the-art techniques like RAG, multi-agent LLM orchestration, and transformer-based NLP into reliable, scalable systems that drive measurable outcomes — reducing manual effort, improving prediction accuracy, and lowering infrastructure costs.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
-              icon: <Globe className="h-8 w-8 text-chart-1" />,
-              title: "Frontend Engineering",
-              desc: "Crafting responsive, accessible, and performant user interfaces with React, Next.js, and modern CSS."
+              icon: <Brain className="h-8 w-8 text-chart-1" />,
+              title: "Generative AI & LLMs",
+              desc: "Building RAG pipelines, multi-agent LLM workflows, and agentic systems using LangChain, AutoGen, and OpenAI GPT-4o for autonomous reasoning and QA."
             },
             {
-              icon: <Terminal className="h-8 w-8 text-chart-2" />,
-              title: "Backend Development",
-              desc: "Building scalable APIs and microservices using Node.js, Express, and Go."
+              icon: <BarChart3 className="h-8 w-8 text-chart-2" />,
+              title: "Machine Learning & NLP",
+              desc: "Developing predictive models, NLP pipelines (BERT, SBERT, SpaCy), and ensemble methods with measurable accuracy improvements in production environments."
             },
             {
-              icon: <Database className="h-8 w-8 text-chart-3" />,
-              title: "Database Design",
-              desc: "Architecting efficient data models with PostgreSQL, MongoDB, and Redis."
+              icon: <Cloud className="h-8 w-8 text-chart-3" />,
+              title: "MLOps & Cloud Infrastructure",
+              desc: "Productionizing models with Docker, Airflow, CI/CD, and AWS (SageMaker, S3, EC2, Lambda, Glue) with observability via Prometheus and Grafana."
             },
             {
-              icon: <Code className="h-8 w-8 text-chart-4" />,
-              title: "DevOps & Cloud",
-              desc: "Deploying and scaling applications on AWS, Vercel, and configuring CI/CD pipelines."
+              icon: <FlaskConical className="h-8 w-8 text-chart-4" />,
+              title: "Data Engineering",
+              desc: "Building scalable ETL pipelines using PySpark, SQL, and Apache Airflow to process millions of records daily for ML feature engineering and batch inference."
             }
           ].map((feature, i) => (
             <motion.div
