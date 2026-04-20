@@ -4,6 +4,17 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Artifacts
+
+### Portfolio Website (`artifacts/portfolio`)
+- **Type:** React + Vite (static)
+- **Preview path:** `/`
+- **Pages:**
+  - `/` — Home: Hero, About, Skills, Experience, Education, Contact
+  - `/projects` — Projects showcase page (6 projects grid with category badges)
+- **Navigation:** Sticky nav with anchor-scroll links on home, page routing to /projects via wouter Link
+- **Features:** Light/dark mode toggle, framer-motion animations, responsive design, generated avatar image
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces

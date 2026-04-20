@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export function Hero() {
   return (
@@ -23,37 +24,55 @@ export function Hero() {
             </span>
             Available for new opportunities
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold font-display leading-tight tracking-tight">
             Building digital <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-chart-4">experiences</span> that matter.
           </h1>
-          
+
           <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
             I'm <span className="text-foreground font-semibold">Alex Chen</span>, a Senior Full Stack Developer specializing in React, Node.js, and crafting exceptional user interfaces.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mt-4">
-            <Button size="lg" className="h-12 px-8 rounded-full font-medium" asChild>
-              <a href="#projects">
-                View My Work <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <Link href="/projects">
+              <Button size="lg" className="h-12 px-8 rounded-full font-medium">
+                View My Projects <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="h-12 px-8 rounded-full font-medium gap-2">
               <Download className="h-4 w-4" /> Resume
             </Button>
           </div>
 
           <div className="flex items-center gap-5 mt-8">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              data-testid="link-github"
+            >
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+              data-testid="link-linkedin"
+            >
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-blue-400 transition-colors">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-muted-foreground hover:text-blue-400 transition-colors"
+              data-testid="link-twitter"
+            >
               <Twitter className="h-6 w-6" />
               <span className="sr-only">Twitter</span>
             </a>
@@ -68,9 +87,9 @@ export function Hero() {
         >
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/30 to-chart-4/30 transform rotate-3" />
           <div className="absolute inset-0 rounded-3xl bg-background border border-border shadow-xl transform -rotate-3 overflow-hidden">
-            <img 
-              src="/avatar.png" 
-              alt="Alex Chen - Developer" 
+            <img
+              src="/avatar.png"
+              alt="Alex Chen - Developer"
               className="w-full h-full object-cover object-center"
             />
           </div>

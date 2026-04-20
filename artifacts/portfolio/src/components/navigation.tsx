@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "wouter";
 
-const navItems = [
+const homeNavItems = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
   { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
 ];
@@ -17,30 +17,31 @@ export function Navigation() {
   const [activeSection, setActiveSection] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [location] = useLocation();
+
+  const isProjectsPage = location === "/projects";
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
-      // Highlight active section
-      const sections = document.querySelectorAll("section[id]");
-      let currentSection = "";
-      sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= sectionTop - 200) {
-          currentSection = section.getAttribute("id") || "";
-        }
-      });
-      setActiveSection(currentSection);
+      if (!isProjectsPage) {
+        const sections = document.querySelectorAll("section[id]");
+        let currentSection = "";
+        sections.forEach((section) => {
+          const sectionTop = (section as HTMLElement).offsetTop;
+          if (window.scrollY >= sectionTop - 200) {
+            currentSection = section.getAttribute("id") || "";
+          }
+        });
+        setActiveSection(currentSection);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isProjectsPage]);
 
   useEffect(() => {
-    // Check initial theme
     const isDark = document.documentElement.classList.contains("dark");
     setTheme(isDark ? "dark" : "light");
   }, []);
@@ -58,10 +59,7 @@ export function Navigation() {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
     setMobileMenuOpen(false);
   };
@@ -75,34 +73,54 @@ export function Navigation() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a 
-          href="#home" 
-          onClick={(e) => scrollTo(e, "#home")}
-          className="text-xl font-bold font-display tracking-tighter"
+        <Link
+          href="/"
+          className="text-xl font-bold font-display tracking-tighter hover:opacity-80 transition-opacity"
         >
           ALEX.<span className="text-primary">DEV</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-6">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  onClick={(e) => scrollTo(e, item.href)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    activeSection === item.href.substring(1)
-                      ? "text-primary"
-                      : "text-muted-foreground"
-                  }`}
+            {isProjectsPage ? (
+              <li>
+                <Link
+                  href="/"
+                  className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground"
                 >
-                  {item.name}
-                </a>
+                  Home
+                </Link>
               </li>
-            ))}
+            ) : (
+              homeNavItems.map((item) => (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => scrollTo(e, item.href)}
+                    className={`text-sm font-medium transition-colors hover:text-primary ${
+                      activeSection === item.href.substring(1)
+                        ? "text-primary"
+                        : "text-muted-foreground"
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))
+            )}
+            <li>
+              <Link
+                href="/projects"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  isProjectsPage ? "text-primary" : "text-muted-foreground"
+                }`}
+              >
+                Projects
+              </Link>
+            </li>
           </ul>
-          
+
           <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
             {theme === "light" ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
           </Button>
@@ -133,20 +151,41 @@ export function Navigation() {
             className="md:hidden bg-background border-b border-border"
           >
             <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => scrollTo(e, item.href)}
-                  className={`text-lg font-medium p-2 rounded-md ${
-                    activeSection === item.href.substring(1)
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground hover:bg-muted"
-                  }`}
+              {isProjectsPage ? (
+                <Link
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-lg font-medium p-2 rounded-md text-foreground hover:bg-muted"
                 >
-                  {item.name}
-                </a>
-              ))}
+                  Home
+                </Link>
+              ) : (
+                homeNavItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => scrollTo(e, item.href)}
+                    className={`text-lg font-medium p-2 rounded-md ${
+                      activeSection === item.href.substring(1)
+                        ? "bg-primary/10 text-primary"
+                        : "text-foreground hover:bg-muted"
+                    }`}
+                  >
+                    {item.name}
+                  </a>
+                ))
+              )}
+              <Link
+                href="/projects"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`text-lg font-medium p-2 rounded-md ${
+                  isProjectsPage
+                    ? "bg-primary/10 text-primary"
+                    : "text-foreground hover:bg-muted"
+                }`}
+              >
+                Projects
+              </Link>
             </nav>
           </motion.div>
         )}
